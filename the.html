@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <style>
+        section {
+            border: solid 1px black;
+            border-radius: 1em;
+            padding: 1em;
+            margin: 1em;
+            max-width: 500px;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            height: 1em;
+            border-radius: .5em;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: opacity .15s ease-in-out;
+            transition: opacity .15s ease-in-out;
+        }
+        input[type="range"]:hover {
+            opacity: 1;
+        }
+        /* Firefox overrides */
+        input[type="range"]::-moz-range-thumb {
+            width: 1.4em;
+            height: 1.4em;
+            border: solid 1px black;
+            border-radius: 50%;
+            background: #EEE;
+            cursor: pointer; 
+        }
+        /* Chrome/Safari/Opera overrides */        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 1.75em;
+            height: 1.75em;
+            background: #EEE;
+            border: solid 1px black;
+            border-radius: 50%;
+            cursor: pointer; 
+        }
+        
+    </style>
+    <script type="text/javascript" src="./the.js"></script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const cui = new CUI();
+        cui.Toggle(document.querySelector('[name="toggle"]'))
+        cui.RadioGroup('radio')
+        cui.Accordian(document.querySelector('#accordian-outer'),document.querySelector('#accordian-inner'))
+        cui.Dropdown(document.querySelector('[name="dropdown"]'))
+    })
+    </script>
+  </head>
+  <body>
+    <h1>Effects</h1>
+    <section>
+      <h2>Accordian</h2>
+      <div id="accordian-outer">Outer-Header
+        <div id="accordian-inner" style="max-height: 200px; overflow-y: auto;" >
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        </div>
+      </div>
+    </section>
+    <h1>Form</h2>
+    <section>
+      <h2>Slider</h2>
+      <!-- TODO: make slider a component, with:
+        Min label on left side of slider
+        Max label on right side of slider
+        onhover displays current value
+      -->
+      <input min="0" max="10" step="1" type="range" name="slider" />
+    </section>
+    <section>
+      <h2>Dropdown</h2>
+      <select name="dropdown">
+        <option value="">Select...</option>
+        <option value="foo">Foo</option>
+        <option value="bar">Boo</option>
+        <option value="baz">Baz</option>
+        <option value="long">Pack my box with five dozen liquor jugs!</option>
+      </select>
+    </section>
+    <section>
+      <h2>Toggle</h2>
+      <input name="toggle" type="checkbox" value="1" />
+    </section>
+    <section>
+      <h2>Radio</h2>
+      <label for="radio1">Option 1</label>
+      <input id="radio1" type="radio" name="radio" value="1" />
+      <label for="radio2">Option 2</label>
+      <input id="radio2" type="radio" name="radio" value="2" />
+      <label for="radio3">Option 3</label>
+      <input id="radio3" type="radio" name="radio" value="3" />
+      <input id="radio4" type="radio" name="radio" value="4" />
+    </section>
+    
+  </body>
+</html>
